@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>ADO.NET | José Luis Freitez Fayard</title>
+</head>
+<body>
+    <div class="container-fluid">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="./index.html">ADO.NET</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+              </ul>
+            </div>
+          </nav> <!--FIN Barra de navegación-->
+
+          <!-- Sección de Gradiente-->
+          <div class="row-fluid gradient">
+            <h1>ADO.NET</h1>
+          </div>
+
+          <div class="row arq">
+              <div class="col-md-6 col-12 p-5">
+                <h2>¿Qué es?</h2>
+                <p class="text-justify">ADO.NET es un conjunto de componentes del software que pueden ser usados por los programadores para acceder a datos y a servicios de datos. Es parte de la biblioteca de clases base que están incluidas en el Microsoft .NET Framework. Es comúnmente usado por los programadores para acceder y para modificar los datos almacenados en un Sistema Gestor de Bases de Datos Relacionales, aunque también puede ser usado para acceder a datos en fuentes no relacionales. ADO.NET es a veces considerado como una evolución de la tecnología ActiveX Data Objects (ADO), pero fue cambiado tan extensivamente que puede ser concebido como un producto enteramente nuevo. </p>
+
+                <div class="alert alert-info" role="alert">
+                    <p>Esta tecnología es una parte del .NET Framework 3.0 (habiendo sido parte del framework desde la versión 1.0).</p>
+                  </div>
+              </div>
+              <div class="col-md-6 col-12 p-5">
+                <img src="adonet1.png" alt="">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12 p-50">
+                <h2>Arquitectura</h2>
+              </div>
+              <div class="col-md-6 col-12 p-5">
+                  <h3>Data Provider</h3>
+                  <p class="text-justify" >Estas clases proporcionan el acceso a una fuente de datos, como Microsoft SQL Server y Oracle. Cada fuente de datos tiene su propio conjunto de objetos del proveedor, pero cada uno tienen un conjunto común de clases de utilidad:</p>
+
+                  <ul class="text-justify">
+                    <li>Connection: Proporciona una conexión usada para comunicarse con la fuente de datos. También actúa como Abstract Factory para los objetos command.</li>
+                    <li>Command: Usado para realizar alguna acción en la fuente de datos, como lectura, actualización, o borrado de datos relacionales.</li>
+                    <li>Parameter: Describe un simple parámetro para un command. Un ejemplo común es un parámetro para ser usado en un procedimiento almacenado.</li>
+                    <li>DataAdapter: "Puente" utilizado para transferir data entre una fuente de datos y un objeto DataSet (ver abajo).</li>
+                    <li>DataReader: Es una clase usada para procesar eficientemente una lista grande de resultados, un registro a la vez.</li>
+                  </ul>
+                  <img src="adonet2.png" class="img-thumbnail" alt="">
+              </div>
+              <div class="col-md-6 col-12 p-5">
+                <h3>Data Sets</h3>
+                <p>Los objetos DataSets, son un grupo de clases que describen una simple base de datos relacional en memoria, fueron la estrella del show en el lanzamiento inicial (1.0) del Microsoft .NET Framework. Las clases forman una jerarquía de contención:</p>
+                <ul class="text-justify">
+
+                <li>Un objeto DataSet representa un esquema (o una base de datos entera o un subconjunto de una). Puede contener las tablas y las relaciones entre esas tablas.</li>
+
+                <ul>
+
+                <li>Un objeto DataTable representa una sola tabla en la base de datos. Tiene un nombre, filas, y columnas.</li>
+                <ul>
+
+            <li>Un objeto DataView "se sienta sobre" un DataTable y ordena los datos (como una cláusula "order by" de SQL) y, si se activa un filtro, filtra los registros (como una cláusula "where" del SQL). Para facilitar estas operaciones se usa un índice en memoria. Todas las DataTables tienen un filtro por defecto, mientras que pueden ser definidos cualquier número de DataViews adicionales, reduciendo la interacción con la base de datos subyacente y mejorando así el desempeño.</li>
+                  <ul>
+
+                <li>Un DataColumn representa una columna de la tabla, incluyendo su nombre y tipo.</li>
+                <li>Un objeto DataRow representa una sola fila en la tabla, y permite leer y actualizar los valores en esa fila, así como la recuperación de cualquier fila que esté relacionada con ella a través de una relación de clave primaria - clave extranjera.</li>
+                <li>Un DataRowView representa una sola fila de un DataView, la diferencia entre un DataRow y el DataRowView es importante cuando se está interactuando sobre un resultset.</li>
+              </ul>
+
+              </ul>
+
+        <li>Un DataRelation es una relación entre las tablas, tales como una relación de clave primaria - clave ajena. Esto es útil para permitir la funcionalidad del DataRow de recuperar filas relacionadas.</li>
+        <li>Un Constraint describe una propiedad de la base de datos que se debe cumplir, como que los valores en una columna de clave primaria deben ser únicos. A medida que los datos son modificados cualquier violación que se presente causará excepciones.</li>
+      </ul>
+
+      </ul>
+
+
+<p class="text-justify">Un DataSet es llenado desde una base de datos por un DataAdapter cuyas propiedades Connection y Command que han sido iniciados. Sin embargo, un DataSet puede guardar su contenido a XML (opcionalmente con un esquema XSD), o llenarse a sí mismo desde un XML, haciendo esto excepcionalmente útil para los servicios web, computación distribuida, y aplicaciones ocasionalmente conectadas desconectados. </p>
+              </div>
+            </div> <!--FIN Row-->
+
+            <div class="row arq">
+              <h3 class="p-5">Video</h3>
+              <div class="col-12">
+              <div class="embed-responsive embed-responsive-16by9">
+
+              <iframe width="853" height="480" src="https://www.youtube.com/embed/W5OWHxKuLew" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            </div>
+
+            </div>
+      <footer>
+        Made with HTML, CSS & LOVE by <a href="josefreitez.tk">José Freitez</a>
+      </footer>
+    </div> <!--FIN Contenedor principal-->
+    
+</body>
+</html>
