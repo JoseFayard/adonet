@@ -1,0 +1,42 @@
+.gradient {
+    height: 50vh;
+    background: #36D1DC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #5B86E5, #36D1DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    -o-display: flex;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    
+    color: #fff;
+}
+
+.gradient h1 {
+    font-size: 5em !important;
+}
+
+.p-50 {
+    padding: 50px 50px 0px 50px;
+}
+
+.arq {
+    background-color: #eee;
+}
+
+img {
+    width: 100%;
+}
+
+footer {
+    background: #36D1DC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #5B86E5, #36D1DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 50px;
+}
+footer a {
+    color: #fff;
+}
